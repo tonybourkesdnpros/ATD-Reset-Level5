@@ -147,3 +147,108 @@ CVP_DEVICES:
         - 'ATD-INFRA'
         - 'DCI-BASE'
     imageBundle: []  # Not yet supported  
+  core1-ISP1:
+    name: 'core1-ISP1'
+    parentContainerName: ISP1
+    configlets:
+        - 'ATD-INFRA'
+        - 'core1-ISP1-BASE'
+    imageBundle: []  # Not yet supported  
+  core2-ISP1:
+    name: 'core2-ISP1'
+    parentContainerName: ISP1
+    configlets:
+        - 'ATD-INFRA'
+        - 'core2-ISP1-BASE'
+    imageBundle: []  # Not yet supported  
+  core1-ISP2:
+    name: 'core1-ISP2'
+    parentContainerName: ISP2
+    configlets:
+        - 'ATD-INFRA'
+        - 'core1-ISP2-BASE'
+    imageBundle: []  # Not yet supported  
+  core2-ISP2:
+    name: 'core2-ISP2'
+    parentContainerName: ISP2
+    configlets:
+        - 'ATD-INFRA'
+        - 'core2-ISP2-BASE'
+    imageBundle: []  # Not yet supported  
+  OOB-CORE:
+    name: 'OOB-CORE'
+    parentContainerName: OOB
+    configlets:
+        - 'ATD-INFRA'
+        - 'OOB-CORE-BASE'
+    imageBundle: []  # Not yet supported
+  OOB-DC1:
+    name: 'OOB-DC1'
+    parentContainerName: OOB
+    configlets:
+        - 'ATD-INFRA'
+        - 'OOB-DC1-BASE'
+    imageBundle: []  # Not yet supported  
+  OOB-DC2:
+    name: 'OOB-DC2'
+    parentContainerName: OOB
+    configlets:
+        - 'ATD-INFRA'
+        - 'OOB-DC2-BASE'
+    imageBundle: []  # Not yet supported
+  internet:
+    name: 'internet'
+    parentContainerName: Internet
+    configlets:
+        - 'ATD-INFRA'
+        - 'internet-BASE'
+    imageBundle: []  # Not yet supported 
+  host1-DC3:
+    name: 'host1-DC3'
+    parentContainerName: Host-DC3
+    configlets:
+        - 'ATD-INFRA'
+        - 'host1-DC3-BASE'
+    imageBundle: []  # Not yet supported
+  SW1-DC3:
+    name: 'SW1-DC3'
+    parentContainerName: SW-DC3
+    configlets:
+        - 'ATD-INFRA'
+        - 'SW1-DC3-BASE'
+    imageBundle: []  # Not yet supported
+  cvx:
+    name: 'cvx'
+    parentContainerName: CVX
+    configlets:
+        - 'ATD-INFRA'
+        - 'CVX-BASE'
+    imageBundle: []  # Not yet supported
+  host1-DC1:
+    name: 'host1-DC1'
+    parentContainerName: Host-DC1
+    configlets:
+        - 'ATD-INFRA'
+        - 'host1-DC1-BASE'
+    imageBundle: []  # Not yet supported
+  host2-DC1:
+    name: 'host2-DC1'
+    parentContainerName: Host-DC1
+    configlets:
+        - 'ATD-INFRA'
+        - 'host2-DC1-BASE'
+    imageBundle: []  # Not yet supported    
+  host1-DC2:
+    name: 'host1-DC2'
+    parentContainerName: Host-DC2
+    configlets:
+        - 'ATD-INFRA'
+        - 'host1-DC2-BASE'
+    imageBundle: []  # Not yet supported
+  host2-DC2:
+    name: 'host2-DC2'
+    parentContainerName: Host-DC2
+    configlets:
+        - 'ATD-INFRA'
+        - 'host2-DC2-BASE'
+    imageBundle: []  # Not yet supported    
