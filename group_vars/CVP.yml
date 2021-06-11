@@ -124,7 +124,7 @@ CVP_DEVICES:
     parentContainerName: Spine-DC2
     configlets:
         - 'ATD-INFRA'
-        - 'leaf1-DC2-BASE'
+        - 'spine1-DC2-BASE'
     imageBundle: []  # Not yet supported  
   spine2-DC2:
     name: 'spine2-DC2'
