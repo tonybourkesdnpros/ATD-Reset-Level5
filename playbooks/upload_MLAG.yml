@@ -9,7 +9,7 @@
       MLAG-Left: "{{lookup('file','{{path}}/configlets/MLAG-Left.cfg')}}"
       MLAG-Right: "{{lookup('file','{{path}}/configlets/MLAG-Right.cfg')}}"
   tasks:
-    - name: Push config to CVP
+    - name: Deploy MLAG to CVP
       arista.cvp.cv_configlet_v3:
         configlets: "{{CVP_CONFIGLETS}}"
         state: present
