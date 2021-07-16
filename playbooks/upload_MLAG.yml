@@ -1,0 +1,15 @@
+---
+- name: Upload files as configlets
+  hosts: CloudVision
+  connection: local
+  gather_facts: no
+  vars:
+    path: "{{lookup('env','PWD')}}"
+    CVP_CONFIGLETS:
+      MLAG-Left: "{{lookup('file','{{path}}/configlets/MLAG-Left.cfg')}}"
+      MLAG-Right: "{{lookup('file','{{path}}/configlets/MLAG-Right.cfg')}}"
+  tasks:
+    - name: Push config to CVP
+      arista.cvp.cv_configlet_v3:
+        configlets: "{{CVP_CONFIGLETS}}"
+        state: present

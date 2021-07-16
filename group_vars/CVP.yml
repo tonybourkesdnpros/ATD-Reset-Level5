@@ -1,83 +1,75 @@
 CVP_CONFIGLETS:
 
-
 CVP_DEVICES:
   leaf1-DC1:
     name: 'leaf1-DC1'
-    parentContainerName: Leaf-DC1
+    parentContainerName: Left-DC1
     configlets:
         - 'ATD-INFRA'
         - 'leaf1-DC1-BASE'
-        - 'Ansible-MLAG-Left'
+        - 'MLAG-Left'
+        - 'OSPF-Underlay-Leafs'
+        - 'OSPF-Underlay-leaf1-DC1'
     imageBundle: []  # Not yet supported  
   leaf2-DC1:
     name: 'leaf2-DC1'
-    parentContainerName: Leaf-DC1
+    parentContainerName: Right-DC1
     configlets:
         - 'ATD-INFRA'
         - 'leaf2-DC1-BASE'
-        - 'Ansible-MLAG-Right'
+        - 'MLAG-Right'
+        - 'OSPF-Underlay-Leafs'
+        - 'OSPF-Underlay-leaf2-DC1'
     imageBundle: []  # Not yet supported  
   leaf3-DC1:
     name: 'leaf3-DC1'
-    parentContainerName: Leaf-DC1
+    parentContainerName: Left-DC1
     configlets:
         - 'ATD-INFRA'
         - 'leaf3-DC1-BASE'
-        - 'Ansible-MLAG-Left'
+        - 'MLAG-Left'
+        - 'OSPF-Underlay-Leafs'
+        - 'OSPF-Underlay-leaf3-DC1'
     imageBundle: []  # Not yet supported  
   leaf4-DC1:
     name: 'leaf4-DC1'
-    parentContainerName: Leaf-DC1
+    parentContainerName: Right-DC1
     configlets:
         - 'ATD-INFRA'
         - 'leaf4-DC1-BASE'
-        - 'Ansible-MLAG-Right'
+        - 'MLAG-Right'
+        - 'OSPF-Underlay-Leafs'
+        - 'OSPF-Underlay-leaf4-DC1'
     imageBundle: []  # Not yet supported
   borderleaf1-DC1:
     name: 'borderleaf1-DC1'
-    parentContainerName: Leaf-DC1
+    parentContainerName: Left-DC1
     configlets:
         - 'ATD-INFRA'
         - 'borderleaf1-DC1-BASE'
-        - 'Ansible-MLAG-Left'
+        - 'MLAG-Left'
+        - 'OSPF-Underlay-Leafs'
+        - 'OSPF-Underlay-borderleaf1-DC1'
     imageBundle: []  # Not yet supported  
   borderleaf2-DC1:
     name: 'borderleaf2-DC1'
-    parentContainerName: Leaf-DC1
+    parentContainerName: Right-DC1
     configlets:
         - 'ATD-INFRA'
         - 'borderleaf2-DC1-BASE'
-        - 'Ansible-MLAG-Right'
+        - 'MLAG-Right'
+        - 'OSPF-Underlay-Leafs'
+        - 'OSPF-Underlay-borderleaf2-DC1'
     imageBundle: []  # Not yet supported      
-  spine1-DC1:
-    name: 'spine1-DC1'
-    parentContainerName: Spine-DC1
-    configlets:
-        - 'ATD-INFRA'
-        - 'spine1-DC1-BASE'
-    imageBundle: []  # Not yet supported  
-  spine2-DC1:
-    name: 'spine2-DC1'
-    parentContainerName: Spine-DC1
-    configlets:
-        - 'ATD-INFRA'
-        - 'spine2-DC1-BASE'
-    imageBundle: []  # Not yet supported  
-  spine3-DC1:
-    name: 'spine3-DC1'
-    parentContainerName: Spine-DC1
-    configlets:
-        - 'ATD-INFRA'
-        - 'spine3-DC1-BASE'
-    imageBundle: []  # Not yet supported
   leaf1-DC2:
     name: 'leaf1-DC2'
     parentContainerName: Leaf-DC2
     configlets:
         - 'ATD-INFRA'
         - 'leaf1-DC2-BASE'
-        - 'Ansible-MLAG-Left'
+        - 'MLAG-Left'
+        - 'OSPF-Underlay-Leafs'
+        - 'OSPF-Underlay-leaf1-DC2'
     imageBundle: []  # Not yet supported  
   leaf2-DC2:
     name: 'leaf2-DC2'
@@ -85,7 +77,9 @@ CVP_DEVICES:
     configlets:
         - 'ATD-INFRA'
         - 'leaf2-DC2-BASE'
-        - 'Ansible-MLAG-Right'
+        - 'MLAG-Right'
+        - 'OSPF-Underlay-Leafs'
+        - 'OSPF-Underlay-leaf2-DC2'
     imageBundle: []  # Not yet supported  
   leaf3-DC2:
     name: 'leaf3-DC2'
@@ -93,7 +87,9 @@ CVP_DEVICES:
     configlets:
         - 'ATD-INFRA'
         - 'leaf3-DC2-BASE'
-        - 'Ansible-MLAG-Left'
+        - 'MLAG-Left'
+        - 'OSPF-Underlay-Leafs'
+        - 'OSPF-Underlay-leaf3-DC2'
     imageBundle: []  # Not yet supported  
   leaf4-DC2:
     name: 'leaf4-DC2'
@@ -101,7 +97,9 @@ CVP_DEVICES:
     configlets:
         - 'ATD-INFRA'
         - 'leaf4-DC2-BASE'
-        - 'Ansible-MLAG-Right'
+        - 'MLAG-Right'
+        - 'OSPF-Underlay-Leafs'
+        - 'OSPF-Underlay-leaf4-DC2'
     imageBundle: []  # Not yet supported
   borderleaf1-DC2:
     name: 'borderleaf1-DC2'
@@ -109,7 +107,10 @@ CVP_DEVICES:
     configlets:
         - 'ATD-INFRA'
         - 'borderleaf1-DC2-BASE'
-        - 'Ansible-MLAG-Left'
+        - 'MLAG-Left'
+        - 'OSPF-Underlay-Leafs'
+        - 'OSPF-Underlay-borderleaf1-DC2'
+
     imageBundle: []  # Not yet supported  
   borderleaf2-DC2:
     name: 'borderleaf2-DC2'
@@ -117,13 +118,44 @@ CVP_DEVICES:
     configlets:
         - 'ATD-INFRA'
         - 'borderleaf2-DC2-BASE'
-        - 'Ansible-MLAG-Right'
+        - 'MLAG-Right'
+        - 'OSPF-Underlay-Leafs'
+        - 'OSPF-Underlay-borderleaf2-DC2'
     imageBundle: []  # Not yet supported      
+  spine1-DC1:
+    name: 'spine1-DC1'
+    parentContainerName: Spine-DC1
+    configlets:
+        - 'ATD-INFRA'
+        - 'spine1-DC1-BASE'
+        - 'OSPF-Underlay-Spines'
+        - 'OSPF-Underlay-spine1-DC1'
+    imageBundle: []  # Not yet supported  
+  spine2-DC1:
+    name: 'spine2-DC1'
+    parentContainerName: Spine-DC1
+    configlets:
+        - 'ATD-INFRA'
+        - 'spine2-DC1-BASE'
+        - 'OSPF-Underlay-Spines'
+        - 'OSPF-Underlay-spine2-DC1'
+    imageBundle: []  # Not yet supported  
+  spine3-DC1:
+    name: 'spine3-DC1'
+    parentContainerName: Spine-DC1
+    configlets:
+        - 'ATD-INFRA'
+        - 'spine3-DC1-BASE'
+        - 'OSPF-Underlay-Spines'
+        - 'OSPF-Underlay-spine3-DC1'
+    imageBundle: []  # Not yet supported
   spine1-DC2:
     name: 'spine1-DC2'
     parentContainerName: Spine-DC2
     configlets:
         - 'ATD-INFRA'
+        - 'OSPF-Underlay-Spines'
+        - 'OSPF-Underlay-spine1-DC2'
         - 'spine1-DC2-BASE'
     imageBundle: []  # Not yet supported  
   spine2-DC2:
@@ -132,6 +164,9 @@ CVP_DEVICES:
     configlets:
         - 'ATD-INFRA'
         - 'spine2-DC2-BASE'
+        - 'OSPF-Underlay-spine2-DC2'
+        - 'OSPF-Underlay-Spines'
+
     imageBundle: []  # Not yet supported  
   spine3-DC2:
     name: 'spine3-DC2'
@@ -139,6 +174,8 @@ CVP_DEVICES:
     configlets:
         - 'ATD-INFRA'
         - 'spine3-DC2-BASE'
+        - 'OSPF-Underlay-spine3-DC2'
+        - 'OSPF-Underlay-Spines'
     imageBundle: []  # Not yet supported  
   DCI:
     name: 'DCI'
@@ -146,109 +183,5 @@ CVP_DEVICES:
     configlets:
         - 'ATD-INFRA'
         - 'DCI-BASE'
+        - 'OSPF-Underlay-DCI'
     imageBundle: []  # Not yet supported  
-  core1-ISP1:
-    name: 'core1-ISP1'
-    parentContainerName: ISP1
-    configlets:
-        - 'ATD-INFRA'
-        - 'core1-ISP1-BASE'
-    imageBundle: []  # Not yet supported  
-  core2-ISP1:
-    name: 'core2-ISP1'
-    parentContainerName: ISP1
-    configlets:
-        - 'ATD-INFRA'
-        - 'core2-ISP1-BASE'
-    imageBundle: []  # Not yet supported  
-  core1-ISP2:
-    name: 'core1-ISP2'
-    parentContainerName: ISP2
-    configlets:
-        - 'ATD-INFRA'
-        - 'core1-ISP2-BASE'
-    imageBundle: []  # Not yet supported  
-  core2-ISP2:
-    name: 'core2-ISP2'
-    parentContainerName: ISP2
-    configlets:
-        - 'ATD-INFRA'
-        - 'core2-ISP2-BASE'
-    imageBundle: []  # Not yet supported  
-  OOB-CORE:
-    name: 'OOB-CORE'
-    parentContainerName: OOB
-    configlets:
-        - 'ATD-INFRA'
-        - 'OOB-CORE-BASE'
-    imageBundle: []  # Not yet supported
-  OOB-DC1:
-    name: 'OOB-DC1'
-    parentContainerName: OOB
-    configlets:
-        - 'ATD-INFRA'
-        - 'OOB-DC1-BASE'
-    imageBundle: []  # Not yet supported  
-  OOB-DC2:
-    name: 'OOB-DC2'
-    parentContainerName: OOB
-    configlets:
-        - 'ATD-INFRA'
-        - 'OOB-DC2-BASE'
-    imageBundle: []  # Not yet supported
-  internet:
-    name: 'internet'
-    parentContainerName: Internet
-    configlets:
-        - 'ATD-INFRA'
-        - 'internet-BASE'
-    imageBundle: []  # Not yet supported 
-  host1-DC3:
-    name: 'host1-DC3'
-    parentContainerName: Host-DC3
-    configlets:
-        - 'ATD-INFRA'
-        - 'host1-DC3-BASE'
-    imageBundle: []  # Not yet supported
-  SW1-DC3:
-    name: 'SW1-DC3'
-    parentContainerName: SW-DC3
-    configlets:
-        - 'ATD-INFRA'
-        - 'SW1-DC3-BASE'
-    imageBundle: []  # Not yet supported
-  cvx:
-    name: 'cvx'
-    parentContainerName: CVX
-    configlets:
-        - 'ATD-INFRA'
-        - 'CVX-BASE'
-    imageBundle: []  # Not yet supported
-  host1-DC1:
-    name: 'host1-DC1'
-    parentContainerName: Host-DC1
-    configlets:
-        - 'ATD-INFRA'
-        - 'host1-DC1-BASE'
-    imageBundle: []  # Not yet supported
-  host2-DC1:
-    name: 'host2-DC1'
-    parentContainerName: Host-DC1
-    configlets:
-        - 'ATD-INFRA'
-        - 'host2-DC1-BASE'
-    imageBundle: []  # Not yet supported    
-  host1-DC2:
-    name: 'host1-DC2'
-    parentContainerName: Host-DC2
-    configlets:
-        - 'ATD-INFRA'
-        - 'host1-DC2-BASE'
-    imageBundle: []  # Not yet supported
-  host2-DC2:
-    name: 'host2-DC2'
-    parentContainerName: Host-DC2
-    configlets:
-        - 'ATD-INFRA'
-        - 'host2-DC2-BASE'
-    imageBundle: []  # Not yet supported    
