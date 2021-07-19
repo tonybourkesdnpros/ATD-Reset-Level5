@@ -5,29 +5,8 @@
   gather_facts: no
   vars:
     path: "{{lookup('env','PWD')}}"
-    CVP_CONFIGLETS:
-      OSPF-Underlay-spine1-DC1: "{{lookup('file','{{path}}/configlets/OSPF-Underlay-spine1-DC1.cfg')}}"
-      OSPF-Underlay-spine2-DC1: "{{lookup('file','{{path}}/configlets/OSPF-Underlay-spine2-DC1.cfg')}}"
-      OSPF-Underlay-spine3-DC1: "{{lookup('file','{{path}}/configlets/OSPF-Underlay-spine3-DC1.cfg')}}"
-      OSPF-Underlay-spine1-DC2: "{{lookup('file','{{path}}/configlets/OSPF-Underlay-spine1-DC2.cfg')}}"
-      OSPF-Underlay-spine2-DC2: "{{lookup('file','{{path}}/configlets/OSPF-Underlay-spine2-DC2.cfg')}}"
-      OSPF-Underlay-spine3-DC2: "{{lookup('file','{{path}}/configlets/OSPF-Underlay-spine3-DC2.cfg')}}"
-      OSPF-Underlay-borderleaf1-DC1: "{{lookup('file','{{path}}/configlets/OSPF-Underlay-borderleaf1-DC1.cfg')}}"
-      OSPF-Underlay-borderleaf2-DC1: "{{lookup('file','{{path}}/configlets/OSPF-Underlay-borderleaf2-DC1.cfg')}}"
-      OSPF-Underlay-leaf1-DC1: "{{lookup('file','{{path}}/configlets/OSPF-Underlay-leaf1-DC1.cfg')}}"
-      OSPF-Underlay-leaf2-DC1: "{{lookup('file','{{path}}/configlets/OSPF-Underlay-leaf2-DC1.cfg')}}"
-      OSPF-Underlay-leaf3-DC1: "{{lookup('file','{{path}}/configlets/OSPF-Underlay-leaf3-DC1.cfg')}}"
-      OSPF-Underlay-leaf4-DC1: "{{lookup('file','{{path}}/configlets/OSPF-Underlay-leaf4-DC1.cfg')}}"
-      OSPF-Underlay-leaf1-DC2: "{{lookup('file','{{path}}/configlets/OSPF-Underlay-leaf1-DC2.cfg')}}"
-      OSPF-Underlay-leaf2-DC2: "{{lookup('file','{{path}}/configlets/OSPF-Underlay-leaf2-DC2.cfg')}}"
-      OSPF-Underlay-leaf3-DC2: "{{lookup('file','{{path}}/configlets/OSPF-Underlay-leaf3-DC2.cfg')}}"
-      OSPF-Underlay-leaf4-DC2: "{{lookup('file','{{path}}/configlets/OSPF-Underlay-leaf4-DC2.cfg')}}"
-      OSPF-Underlay-borderleaf1-DC2: "{{lookup('file','{{path}}/configlets/OSPF-Underlay-borderleaf1-DC2.cfg')}}"
-      OSPF-Underlay-borderleaf2-DC2: "{{lookup('file','{{path}}/configlets/OSPF-Underlay-borderleaf2-DC2.cfg')}}"
-      OSPF-Underlay-DCI: "{{lookup('file','{{path}}/configlets/OSPF-Underlay-DCI.cfg')}}"
-
   tasks:
     - name: Push config to CVP
       arista.cvp.cv_configlet_v3:
-        configlets: "{{CVP_CONFIGLETS}}"
+        configlets: "{{CVP_CONFIGLETS_OSPF}}"
         state: present 

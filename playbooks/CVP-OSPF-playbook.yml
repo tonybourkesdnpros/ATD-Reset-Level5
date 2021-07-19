@@ -1,5 +1,5 @@
 ---
-- name: Assign configlets to devices (via group_vars/CVP.yml)
+- name: Assign configlets to devices (via group_vars/)
   hosts: CloudVision
   connection: local
   gather_facts: no
@@ -9,7 +9,7 @@
     register: CVP_FACTS
   - name: "Configure devices on {{inventory_hostname}}"
     arista.cvp.cv_device:
-      devices: "{{CVP_DEVICES}}"
+      devices: "{{CVP_DEVICES_OSPF}}"
       cvp_facts: '{{CVP_FACTS.ansible_facts}}'
       state: present
     register: CVP_DEVICES_RESULTS
