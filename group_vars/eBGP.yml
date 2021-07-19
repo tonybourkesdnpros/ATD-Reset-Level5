@@ -1,0 +1,345 @@
+CVP_CONFIGLETS_eBGP:
+  eBGP-Underlay-spine1-DC1: "{{lookup('file','{{path}}/eBGP-VXLAN/eBGP_underlay_spine1-DC1.cfg')}}"
+  eBGP-Underlay-spine2-DC1: "{{lookup('file','{{path}}/eBGP-VXLAN/eBGP_underlay_spine2-DC1.cfg')}}"
+  eBGP-Underlay-spine3-DC1: "{{lookup('file','{{path}}/eBGP-VXLAN/eBGP_underlay_spine3-DC1.cfg')}}"
+  eBGP-Underlay-spine1-DC2: "{{lookup('file','{{path}}/eBGP-VXLAN/eBGP_underlay_spine1-DC2.cfg')}}"
+  eBGP-Underlay-spine2-DC2: "{{lookup('file','{{path}}/eBGP-VXLAN/eBGP_underlay_spine2-DC2.cfg')}}"
+  eBGP-Underlay-spine3-DC2: "{{lookup('file','{{path}}/eBGP-VXLAN/eBGP_underlay_spine3-DC2.cfg')}}"
+  eBGP-Underlay-borderleaf1-DC1: "{{lookup('file','{{path}}/eBGP-VXLAN/eBGP_underlay_borderleaf1-DC1.cfg')}}"
+  eBGP-Underlay-borderleaf2-DC1: "{{lookup('file','{{path}}/eBGP-VXLAN/eBGP_underlay_borderleaf2-DC1.cfg')}}"
+  eBGP-Underlay-borderleaf1-DC2: "{{lookup('file','{{path}}/eBGP-VXLAN/eBGP_underlay_borderleafs_borderleaf1-DC1.cfg')}}"
+  eBGP-Underlay-borderleaf2-DC2: "{{lookup('file','{{path}}/eBGP-VXLAN/eBGP_underlay_borderleafs_borderleaf2-DC1.cfg')}}"
+  eBGP-Underlay-leaf1-DC1: "{{lookup('file','{{path}}/eBGP-VXLAN/eBGP_underlay_leaf1-DC1.cfg')}}"
+  eBGP-Underlay-leaf2-DC1: "{{lookup('file','{{path}}/eBGP-VXLAN/eBGP_underlay_leaf2-DC1.cfg')}}"
+  eBGP-Underlay-leaf3-DC1: "{{lookup('file','{{path}}/eBGP-VXLAN/eBGP_underlay_leaf3-DC1.cfg')}}"
+  eBGP-Underlay-leaf4-DC1: "{{lookup('file','{{path}}/eBGP-VXLAN/eBGP_underlay_leaf4-DC1.cfg')}}"
+  eBGP-Underlay-leaf1-DC2: "{{lookup('file','{{path}}/eBGP-VXLAN/eBGP_underlay_leaf1-DC2.cfg')}}"
+  eBGP-Underlay-leaf2-DC2: "{{lookup('file','{{path}}/eBGP-VXLAN/eBGP_underlay_leaf2-DC2.cfg')}}"
+  eBGP-Underlay-leaf3-DC2: "{{lookup('file','{{path}}/eBGP-VXLAN/eBGP_underlay_leaf3-DC2.cfg')}}"
+  eBGP-Underlay-leaf4-DC2: "{{lookup('file','{{path}}/eBGP-VXLAN/eBGP_underlay_leaf4-DC2.cfg')}}"
+  eBGP-Underlay-borderleafs-borderleaf1-DC2: "{{lookup('file','{{path}}/eBGP-VXLAN/eBGP_underlay_borderleaf1-DC2.cfg')}}"
+  eBGP-Underlay-borderleafs-borderleaf2-DC2: "{{lookup('file','{{path}}/eBGP-VXLAN/eBGP_underlay_borderleaf2-DC2.cfg')}}"
+  eBGP-Underlay-borderleafs-borderleaf1-DC1: "{{lookup('file','{{path}}/eBGP-VXLAN/eBGP_underlay_borderleafs_borderleaf1-DC2.cfg')}}"
+  eBGP-Underlay-borderleafs-borderleaf2-DC1: "{{lookup('file','{{path}}/eBGP-VXLAN/eBGP_underlay_borderleafs_borderleaf2-DC2.cfg')}}"
+  eBGP-Underlay-DCI: "{{lookup('file','{{path}}/eBGP-VXLAN/eBGP_underlay_DCI.cfg')}}"
+
+CVP_DEVICES_eBGP:
+  leaf1-DC1:
+    name: 'leaf1-DC1'
+    parentContainerName: Left-DC1
+    configlets:
+        - 'ATD-INFRA'
+        - 'leaf1-DC1-BASE'
+    imageBundle: []  # Not yet supported  
+  leaf2-DC1:
+    name: 'leaf2-DC1'
+    parentContainerName: Right-DC1
+    configlets:
+        - 'ATD-INFRA'
+        - 'leaf2-DC1-BASE'
+    imageBundle: []  # Not yet supported  
+  leaf3-DC1:
+    name: 'leaf3-DC1'
+    parentContainerName: Left-DC1
+    configlets:
+        - 'ATD-INFRA'
+        - 'leaf3-DC1-BASE'
+    imageBundle: []  # Not yet supported  
+  leaf4-DC1:
+    name: 'leaf4-DC1'
+    parentContainerName: Right-DC1
+    configlets:
+        - 'ATD-INFRA'
+        - 'leaf4-DC1-BASE'
+    imageBundle: []  # Not yet supported
+  borderleaf1-DC1:
+    name: 'borderleaf1-DC1'
+    parentContainerName: Left-DC1
+    configlets:
+        - 'ATD-INFRA'
+        - 'borderleaf1-DC1-BASE'
+    imageBundle: []  # Not yet supported  
+  borderleaf2-DC1:
+    name: 'borderleaf2-DC1'
+    parentContainerName: Right-DC1
+    configlets:
+        - 'ATD-INFRA'
+        - 'borderleaf2-DC1-BASE'
+    imageBundle: []  # Not yet supported      
+  leaf1-DC2:
+    name: 'leaf1-DC2'
+    parentContainerName: Leaf-DC2
+    configlets:
+        - 'ATD-INFRA'
+        - 'leaf1-DC2-BASE'
+    imageBundle: []  # Not yet supported  
+  leaf2-DC2:
+    name: 'leaf2-DC2'
+    parentContainerName: Leaf-DC2
+    configlets:
+        - 'ATD-INFRA'
+        - 'leaf2-DC2-BASE'
+    imageBundle: []  # Not yet supported  
+  leaf3-DC2:
+    name: 'leaf3-DC2'
+    parentContainerName: Leaf-DC2
+    configlets:
+        - 'ATD-INFRA'
+        - 'leaf3-DC2-BASE'
+    imageBundle: []  # Not yet supported  
+  leaf4-DC2:
+    name: 'leaf4-DC2'
+    parentContainerName: Leaf-DC2
+    configlets:
+        - 'ATD-INFRA'
+        - 'leaf4-DC2-BASE'
+    imageBundle: []  # Not yet supported
+  borderleaf1-DC2:
+    name: 'borderleaf1-DC2'
+    parentContainerName: Leaf-DC2
+    configlets:
+        - 'ATD-INFRA'
+        - 'borderleaf1-DC2-BASE'
+    imageBundle: []  # Not yet supported  
+  borderleaf2-DC2:
+    name: 'borderleaf2-DC2'
+    parentContainerName: Leaf-DC2
+    configlets:
+        - 'ATD-INFRA'
+        - 'borderleaf2-DC2-BASE'
+    imageBundle: []  # Not yet supported      
+  spine1-DC1:
+    name: 'spine1-DC1'
+    parentContainerName: Spine-DC1
+    configlets:
+        - 'ATD-INFRA'
+        - 'spine1-DC1-BASE'
+    imageBundle: []  # Not yet supported  
+  spine2-DC1:
+    name: 'spine2-DC1'
+    parentContainerName: Spine-DC1
+    configlets:
+        - 'ATD-INFRA'
+        - 'spine2-DC1-BASE'
+    imageBundle: []  # Not yet supported  
+  spine3-DC1:
+    name: 'spine3-DC1'
+    parentContainerName: Spine-DC1
+    configlets:
+        - 'ATD-INFRA'
+        - 'spine3-DC1-BASE'
+    imageBundle: []  # Not yet supported
+  spine1-DC2:
+    name: 'spine1-DC2'
+    parentContainerName: Spine-DC2
+    configlets:
+        - 'ATD-INFRA'
+        - 'spine1-DC2-BASE'
+    imageBundle: []  # Not yet supported  
+  spine2-DC2:
+    name: 'spine2-DC2'
+    parentContainerName: Spine-DC2
+    configlets:
+        - 'ATD-INFRA'
+        - 'spine2-DC2-BASE'
+    imageBundle: []  # Not yet supported  
+  spine3-DC2:
+    name: 'spine3-DC2'
+    parentContainerName: Spine-DC2
+    configlets:
+        - 'ATD-INFRA'
+        - 'spine3-DC2-BASE'
+    imageBundle: []  # Not yet supported  
+  DCI:
+    name: 'DCI'
+    parentContainerName: DCI
+    configlets:
+        - 'ATD-INFRA'
+        - 'DCI-BASE'
+    imageBundle: []  # Not yet supported  
+
+CVP_DEVICES_OSPF:
+  leaf1-DC1:
+    name: 'leaf1-DC1'
+    parentContainerName: Left-DC1
+    configlets:
+        - 'ATD-INFRA'
+        - 'leaf1-DC1-BASE'
+        - 'MLAG-Left'
+        - 'OSPF-Underlay-Leafs'
+        - 'OSPF-Underlay-leaf1-DC1'
+    imageBundle: []  # Not yet supported  
+  leaf2-DC1:
+    name: 'leaf2-DC1'
+    parentContainerName: Right-DC1
+    configlets:
+        - 'ATD-INFRA'
+        - 'leaf2-DC1-BASE'
+        - 'MLAG-Right'
+        - 'OSPF-Underlay-Leafs'
+        - 'OSPF-Underlay-leaf2-DC1'
+    imageBundle: []  # Not yet supported  
+  leaf3-DC1:
+    name: 'leaf3-DC1'
+    parentContainerName: Left-DC1
+    configlets:
+        - 'ATD-INFRA'
+        - 'leaf3-DC1-BASE'
+        - 'MLAG-Left'
+        - 'OSPF-Underlay-Leafs'
+        - 'OSPF-Underlay-leaf3-DC1'
+    imageBundle: []  # Not yet supported  
+  leaf4-DC1:
+    name: 'leaf4-DC1'
+    parentContainerName: Right-DC1
+    configlets:
+        - 'ATD-INFRA'
+        - 'leaf4-DC1-BASE'
+        - 'MLAG-Right'
+        - 'OSPF-Underlay-Leafs'
+        - 'OSPF-Underlay-leaf4-DC1'
+    imageBundle: []  # Not yet supported
+  borderleaf1-DC1:
+    name: 'borderleaf1-DC1'
+    parentContainerName: Left-DC1
+    configlets:
+        - 'ATD-INFRA'
+        - 'borderleaf1-DC1-BASE'
+        - 'MLAG-Left'
+        - 'OSPF-Underlay-Leafs'
+        - 'OSPF-Underlay-borderleaf1-DC1'
+    imageBundle: []  # Not yet supported  
+  borderleaf2-DC1:
+    name: 'borderleaf2-DC1'
+    parentContainerName: Right-DC1
+    configlets:
+        - 'ATD-INFRA'
+        - 'borderleaf2-DC1-BASE'
+        - 'MLAG-Right'
+        - 'OSPF-Underlay-Leafs'
+        - 'OSPF-Underlay-borderleaf2-DC1'
+    imageBundle: []  # Not yet supported      
+  leaf1-DC2:
+    name: 'leaf1-DC2'
+    parentContainerName: Leaf-DC2
+    configlets:
+        - 'ATD-INFRA'
+        - 'leaf1-DC2-BASE'
+        - 'MLAG-Left'
+        - 'OSPF-Underlay-Leafs'
+        - 'OSPF-Underlay-leaf1-DC2'
+    imageBundle: []  # Not yet supported  
+  leaf2-DC2:
+    name: 'leaf2-DC2'
+    parentContainerName: Leaf-DC2
+    configlets:
+        - 'ATD-INFRA'
+        - 'leaf2-DC2-BASE'
+        - 'MLAG-Right'
+        - 'OSPF-Underlay-Leafs'
+        - 'OSPF-Underlay-leaf2-DC2'
+    imageBundle: []  # Not yet supported  
+  leaf3-DC2:
+    name: 'leaf3-DC2'
+    parentContainerName: Leaf-DC2
+    configlets:
+        - 'ATD-INFRA'
+        - 'leaf3-DC2-BASE'
+        - 'MLAG-Left'
+        - 'OSPF-Underlay-Leafs'
+        - 'OSPF-Underlay-leaf3-DC2'
+    imageBundle: []  # Not yet supported  
+  leaf4-DC2:
+    name: 'leaf4-DC2'
+    parentContainerName: Leaf-DC2
+    configlets:
+        - 'ATD-INFRA'
+        - 'leaf4-DC2-BASE'
+        - 'MLAG-Right'
+        - 'OSPF-Underlay-Leafs'
+        - 'OSPF-Underlay-leaf4-DC2'
+    imageBundle: []  # Not yet supported
+  borderleaf1-DC2:
+    name: 'borderleaf1-DC2'
+    parentContainerName: Leaf-DC2
+    configlets:
+        - 'ATD-INFRA'
+        - 'borderleaf1-DC2-BASE'
+        - 'MLAG-Left'
+        - 'OSPF-Underlay-Leafs'
+        - 'OSPF-Underlay-borderleaf1-DC2'
+
+    imageBundle: []  # Not yet supported  
+  borderleaf2-DC2:
+    name: 'borderleaf2-DC2'
+    parentContainerName: Leaf-DC2
+    configlets:
+        - 'ATD-INFRA'
+        - 'borderleaf2-DC2-BASE'
+        - 'MLAG-Right'
+        - 'OSPF-Underlay-Leafs'
+        - 'OSPF-Underlay-borderleaf2-DC2'
+    imageBundle: []  # Not yet supported      
+  spine1-DC1:
+    name: 'spine1-DC1'
+    parentContainerName: Spine-DC1
+    configlets:
+        - 'ATD-INFRA'
+        - 'spine1-DC1-BASE'
+        - 'OSPF-Underlay-Spines'
+        - 'OSPF-Underlay-spine1-DC1'
+    imageBundle: []  # Not yet supported  
+  spine2-DC1:
+    name: 'spine2-DC1'
+    parentContainerName: Spine-DC1
+    configlets:
+        - 'ATD-INFRA'
+        - 'spine2-DC1-BASE'
+        - 'OSPF-Underlay-Spines'
+        - 'OSPF-Underlay-spine2-DC1'
+    imageBundle: []  # Not yet supported  
+  spine3-DC1:
+    name: 'spine3-DC1'
+    parentContainerName: Spine-DC1
+    configlets:
+        - 'ATD-INFRA'
+        - 'spine3-DC1-BASE'
+        - 'OSPF-Underlay-Spines'
+        - 'OSPF-Underlay-spine3-DC1'
+    imageBundle: []  # Not yet supported
+  spine1-DC2:
+    name: 'spine1-DC2'
+    parentContainerName: Spine-DC2
+    configlets:
+        - 'ATD-INFRA'
+        - 'OSPF-Underlay-Spines'
+        - 'OSPF-Underlay-spine1-DC2'
+        - 'spine1-DC2-BASE'
+    imageBundle: []  # Not yet supported  
+  spine2-DC2:
+    name: 'spine2-DC2'
+    parentContainerName: Spine-DC2
+    configlets:
+        - 'ATD-INFRA'
+        - 'spine2-DC2-BASE'
+        - 'OSPF-Underlay-spine2-DC2'
+        - 'OSPF-Underlay-Spines'
+
+    imageBundle: []  # Not yet supported  
+  spine3-DC2:
+    name: 'spine3-DC2'
+    parentContainerName: Spine-DC2
+    configlets:
+        - 'ATD-INFRA'
+        - 'spine3-DC2-BASE'
+        - 'OSPF-Underlay-spine3-DC2'
+        - 'OSPF-Underlay-Spines'
+    imageBundle: []  # Not yet supported  
+  DCI:
+    name: 'DCI'
+    parentContainerName: DCI
+    configlets:
+        - 'ATD-INFRA'
+        - 'DCI-BASE'
+        - 'OSPF-Underlay-DCI'
+    imageBundle: []  # Not yet supported  

@@ -10,6 +10,6 @@
   - name: "Configure devices on {{inventory_hostname}}"
     arista.cvp.cv_device:
       devices: "{{CVP_DEVICES_OSPF}}"
-      cvp_facts: '{{CVP_FACTS.ansible_facts}}'
+      cvp_facts: "{{CVP_FACTS.ansible_facts}}"
       state: present
     register: CVP_DEVICES_RESULTS
