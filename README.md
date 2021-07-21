@@ -5,6 +5,15 @@ for the Arista ACE Level 5 (automation) certification course lab topology (as of
 
 This will **only** work on the ATD Level 5 labs (and perhaps Level 4), but you can modidfy the YAML files and playbooks to suit other environments. 
 
+The playbooks/configs/YAML files will set the Level 5 lab environment into one of three configurations (more comming later): 
+
+* Default
+* eBGP-based underlay (for MP-BGP EVPN VXLAN)
+* OSPF-based underlay (for MP-BGP EVPN VXLAN)
+
+The playbooks will set the configlets, upload any that need to be uploaded, and attach them to devices. It will create containers (but does not delete them). 
+
+This does **not** create the change control or execute the change control. At this time, that must be done manually by an administrator. 
 
 ## Getting Started
 
@@ -28,7 +37,7 @@ Edit the inventory.yml file to reflect the password for your particular envirome
 
 ## The Playbooks
 
-There are currently three different play books: 
+There are currently three different Ansible playbooks: 
 
 * CVP-default.yml
 * CVP-eBGP.yml
