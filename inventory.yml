@@ -14,4 +14,5 @@ all:
           ansible_network_os: eos
           ansible_httpapi_port: 443
           # Configuration to get Virtual Env information
+          # Line to change something without changing anything
           ansible_python_interpreter: /usr/bin/python3
