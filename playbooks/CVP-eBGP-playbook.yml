@@ -6,30 +6,27 @@
   vars: 
     path: "{{lookup('env','PWD')}}"
   vars_files: 
-     - /home/coder/project/labfiles/ATD-Lab-Reset/vars/eBGP-Underlay.yml
+     - /home/coder/project/persist/ATD-Lab-Reset/vars/eBGP-Underlay.yml
    
   tasks:
-    - name: Upload Configlets for eBGP Underlay
-      arista.cvp.cv_configlet_v3:
-        configlets: "{{ CVP_CONFIGLETS_eBGP }}"
-        state: present 
-    - name: "Gather CVP facts"
-      arista.cvp.cv_facts:
-      register: CVP_FACTS
+    # - name: Upload Configlets for eBGP Underlay
+    #   arista.cvp.cv_configlet_v3:
+    #     configlets: "{{ CVP_CONFIGLETS_eBGP }}"
+    #     state: present 
+    # - name: "Gather CVP facts"
+    #   arista.cvp.cv_facts:
+    #   register: CVP_FACTS
 
-    - name: "Build Container topology"
-      arista.cvp.cv_container:
-        cvp_facts: "{{CVP_FACTS.ansible_facts}}"
-        topology: "{{CONTAINERS_eBGP}}"
-        mode: merge
-      register: CVP_CONTAINERS_RESULT
-    - name: "Print debug for containers module"
-      debug:
-        msg: "{{CVP_CONTAINERS_RESULT}}"
+    # - name: "Build Container topology"
+    #   arista.cvp.cv_container_v3:
+    #     topology: "{{CONTAINERS_eBGP}}"
+
+    # - name: "Configure devices on {{inventory_hostname}}"
+    #   arista.cvp.cv_device_v3:
+    #     devices: '{{CVP_DEVICES}}'
+    #     state: present
     
     - name: "Apply configlets"
-      arista.cvp.cv_device:
+      arista.cvp.cv_device_v3:
         devices: "{{ CVP_DEVICES_eBGP }}"
-        cvp_facts: "{{CVP_FACTS.ansible_facts}}"
         state: present
-      register: CVP_DEVICES_RESULTS
