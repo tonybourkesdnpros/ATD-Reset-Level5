@@ -4,40 +4,25 @@ CVP_CONFIGLETS:
 
 CONTAINERS_DEFAULT:
   DC1:
-      parent_container: Tenant
+      parentContainerName: Tenant
   Spine-DC1:
-      parent_container: DC1
-      devices:
-        - spine1-DC1
-        - spine2-DC1
-        - spine3-DC1
+      parentContainerName: DC1
   Leaf-DC1:
-      parent_container: DC1
-      devices:
-        - leaf1-DC1
-        - leaf3-DC1
-        - borderleaf1-DC1
-        - leaf2-DC1
-        - leaf4-DC1
-        - borderleaf2-DC1
+      parentContainerName: DC1
+  Left-DC1:
+      parentContainerName: Leaf-DC1
+  Right-DC1:
+      parentContainerName: Leaf-DC1
   DC2:
-      parent_container: Tenant
+      parentContainerName: Tenant
   Spine-DC2:
-      parent_container: DC2
-      devices:
-        - spine1-DC2
-        - spine2-DC2
-        - spine3-DC2
+      parentContainerName: DC2
   Leaf-DC2:
-      parent_container: DC2
-      devices:
-        - leaf1-DC2
-        - leaf3-DC2
-        - borderleaf1-DC2
-        - leaf2-DC2
-        - leaf4-DC2
-        - borderleaf2-DC2
-
+      parentContainerName: DC2
+  Left-DC2:
+      parentContainerName: Leaf-DC2
+  Right-DC2:
+      parentContainerName: Leaf-DC2
 
 CVP_DEVICES_DEFAULT:
   leaf1-DC1:
