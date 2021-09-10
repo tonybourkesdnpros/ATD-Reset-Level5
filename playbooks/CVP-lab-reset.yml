@@ -11,14 +11,14 @@
    
   tasks:
 
-    - name: "Build default container topology"
-      arista.cvp.cv_container_v3:
-        topology: "{{CONTAINERS_DEFAULT}}"
+    # - name: "Build default container topology"
+    #   arista.cvp.cv_container_v3:
+    #     topology: "{{CONTAINERS_DEFAULT}}"
 
     - name: "Apply configlets for default config"
       arista.cvp.cv_device_v3:
         devices: "{{ CVP_DEVICES_DEFAULT }}"
-        cvp_facts: "{{CVP_FACTS.ansible_facts}}"
         state: present
+        apply_mode: strict
       register: CVP_DEVICES_RESULTS
 
