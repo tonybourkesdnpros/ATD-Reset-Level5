@@ -11,9 +11,9 @@
    
   tasks:
 
-    # - name: "Build default container topology"
-    #   arista.cvp.cv_container_v3:
-    #     topology: "{{CONTAINERS_DEFAULT}}"
+    - name: "Build default container topology"
+      arista.cvp.cv_container_v3:
+        topology: "{{CONTAINERS_DEFAULT}}"
 
     - name: "Apply configlets for default config"
       arista.cvp.cv_device_v3:
