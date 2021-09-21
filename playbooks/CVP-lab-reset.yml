@@ -7,7 +7,7 @@
   vars: 
     path: "{{lookup('env','PWD')}}"
   vars_files: 
-     - /home/coder/project/persist/ATD-Lab-Reset/vars/CVP-base.yml
+     - ../vars/CVP-base.yml
    
   tasks:
 

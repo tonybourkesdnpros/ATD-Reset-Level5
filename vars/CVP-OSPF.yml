@@ -22,14 +22,21 @@ CVP_CONFIGLETS_OSPF:
   OSPF-Underlay-spine1-DC2: "{{lookup('file','{{path}}/configlets/OSPF/OSPF-Underlay-spine1-DC2.cfg')}}"
   OSPF-Underlay-spine2-DC2: "{{lookup('file','{{path}}/configlets/OSPF/OSPF-Underlay-spine2-DC2.cfg')}}"
   OSPF-Underlay-spine3-DC2: "{{lookup('file','{{path}}/configlets/OSPF/OSPF-Underlay-spine3-DC2.cfg')}}"
+  MLAG-Left: "{{lookup('file','{{path}}/configlets/MLAG-Left.cfg')}}"
+  MLAG-Right: "{{lookup('file','{{path}}/configlets/MLAG-Right.cfg')}}"
+  
 
 CONTAINERS_OSPF:
   DC1:
       parentContainerName: Tenant
   Spine-DC1:
       parentContainerName: DC1
+      configlets: 
+        - OSPF-Underlay-Spines
   Leaf-DC1:
       parentContainerName: DC1
+      configlets: 
+        - OSPF-Underlay-Leafs
   Left-DC1:
       parentContainerName: Leaf-DC1
   Right-DC1:
@@ -38,8 +45,12 @@ CONTAINERS_OSPF:
       parentContainerName: Tenant
   Spine-DC2:
       parentContainerName: DC2
+      configlets: 
+        - OSPF-Underlay-Spines
   Leaf-DC2:
       parentContainerName: DC2
+      configlets: 
+        - OSPF-Underlay-Leafs
   Left-DC2:
       parentContainerName: Leaf-DC2
   Right-DC2:
@@ -52,130 +63,130 @@ CVP_DEVICES_:
       - 'ATD-INFRA'
       - 'leaf1-DC1-BASE'
       - 'MLAG-Left'
-      - 'eBGP-Underlay-leaf1-DC1'
+      - 'OSPF-Underlay-leaf1-DC1'
   - fqdn: 'leaf2-DC1'
     parentContainerName: 'Right-DC1'
     configlets:
       - 'ATD-INFRA'
       - 'leaf2-DC1-BASE'
       - 'MLAG-Right'
-      - 'eBGP-Underlay-leaf2-DC1'
+      - 'OSPF-Underlay-leaf2-DC1'
   - fqdn: 'leaf3-DC1'
     parentContainerName: 'Left-DC1'
     configlets:
       - 'ATD-INFRA'
       - 'leaf3-DC1-BASE'
       - 'MLAG-Left'
-      - 'eBGP-Underlay-leaf3-DC1'
+      - 'OSPF-Underlay-leaf3-DC1'
   - fqdn: 'leaf4-DC1'
     parentContainerName: 'Right-DC1'
     configlets:
       - 'ATD-INFRA'
       - 'leaf4-DC1-BASE'
       - 'MLAG-Right'
-      - 'eBGP-Underlay-leaf4-DC1'
+      - 'OSPF-Underlay-leaf4-DC1'
   - fqdn: 'borderleaf1-DC1'
     parentContainerName: 'Left-DC1'
     configlets:
       - 'ATD-INFRA'
       - 'borderleaf1-DC1-BASE'
       - 'MLAG-Left'
-      - 'eBGP-Underlay-borderleaf1-DC1'
-      - 'eBGP-Underlay-borderleafs-borderleaf1-DC1'
+      - 'OSPF-Underlay-borderleaf1-DC1'
+      - 'OSPF-Underlay-borderleafs-borderleaf1-DC1'
   - fqdn: 'borderleaf2-DC1'
     parentContainerName: 'Right-DC1'
     configlets:
       - 'ATD-INFRA'
       - 'borderleaf2-DC1-BASE'
       - 'MLAG-Right'
-      - 'eBGP-Underlay-borderleaf2-DC1'
-      - 'eBGP-Underlay-borderleafs-borderleaf2-DC1'
+      - 'OSPF-Underlay-borderleaf2-DC1'
+      - 'OSPF-Underlay-borderleafs-borderleaf2-DC1'
   - fqdn: 'spine1-DC1'
     parentContainerName: 'Spine-DC1'
     configlets:
       - 'ATD-INFRA'
       - 'spine1-DC1-BASE'
-      - 'eBGP-Underlay-spine1-DC1'
+      - 'OSPF-Underlay-spine1-DC1'
   - fqdn: 'spine2-DC1'
     parentContainerName: 'Spine-DC1'
     configlets:
       - 'ATD-INFRA'
       - 'spine2-DC1-BASE'
-      - 'eBGP-Underlay-spine2-DC1'
+      - 'OSPF-Underlay-spine2-DC1'
   - fqdn: 'spine3-DC1'
     parentContainerName: 'Spine-DC1'
     configlets:
       - 'ATD-INFRA'
       - 'spine3-DC1-BASE'
-      - 'eBGP-Underlay-spine3-DC1'      
+      - 'OSPF-Underlay-spine3-DC1'      
   - fqdn: 'leaf1-DC2'
     parentContainerName: 'Left-DC2'
     configlets:
       - 'ATD-INFRA'
       - 'leaf1-DC2-BASE'
       - 'MLAG-Left'
-      - 'eBGP-Underlay-leaf1-DC2'
+      - 'OSPF-Underlay-leaf1-DC2'
   - fqdn: 'leaf2-DC2'
     parentContainerName: 'Right-DC2'
     configlets:
       - 'ATD-INFRA'
       - 'leaf2-DC2-BASE'
       - 'MLAG-Right'
-      - 'eBGP-Underlay-leaf2-DC2'
+      - 'OSPF-Underlay-leaf2-DC2'
   - fqdn: 'leaf3-DC2'
     parentContainerName: 'Left-DC2'
     configlets:
       - 'ATD-INFRA'
       - 'leaf3-DC2-BASE'
       - 'MLAG-Left'
-      - 'eBGP-Underlay-leaf3-DC2'
+      - 'OSPF-Underlay-leaf3-DC2'
   - fqdn: 'leaf4-DC2'
     parentContainerName: 'Right-DC2'
     configlets:
       - 'ATD-INFRA'
       - 'leaf4-DC2-BASE'
       - 'MLAG-Right'
-      - 'eBGP-Underlay-leaf4-DC2'
+      - 'OSPF-Underlay-leaf4-DC2'
   - fqdn: 'borderleaf1-DC2'
     parentContainerName: 'Left-DC2'
     configlets:
       - 'ATD-INFRA'
       - 'borderleaf1-DC2-BASE'
       - 'MLAG-Left'
-      - 'eBGP-Underlay-borderleaf1-DC2'
-      - 'eBGP-Underlay-borderleafs-borderleaf1-DC2'
+      - 'OSPF-Underlay-borderleaf1-DC2'
+      - 'OSPF-Underlay-borderleafs-borderleaf1-DC2'
   - fqdn: 'borderleaf2-DC2'
     parentContainerName: 'Right-DC2'
     configlets:
       - 'ATD-INFRA'
       - 'borderleaf2-DC2-BASE'
       - 'MLAG-Right'
-      - 'eBGP-Underlay-borderleaf2-DC2'
-      - 'eBGP-Underlay-borderleafs-borderleaf2-DC2'
+      - 'OSPF-Underlay-borderleaf2-DC2'
+      - 'OSPF-Underlay-borderleafs-borderleaf2-DC2'
   - fqdn: 'spine1-DC2'
     parentContainerName: 'Spine-DC2'
     configlets:
       - 'ATD-INFRA'
       - 'spine1-DC2-BASE'
-      - 'eBGP-Underlay-spine1-DC2'
+      - 'OSPF-Underlay-spine1-DC2'
   - fqdn: 'spine2-DC2'
     parentContainerName: 'Spine-DC2'
     configlets:
       - 'ATD-INFRA'
       - 'spine2-DC2-BASE'
-      - 'eBGP-Underlay-spine2-DC2'
+      - 'OSPF-Underlay-spine2-DC2'
   - fqdn: 'spine3-DC2'
     parentContainerName: 'Spine-DC2'
     configlets:
       - 'ATD-INFRA'
       - 'spine3-DC2-BASE'
-      - 'eBGP-Underlay-spine3-DC2' 
+      - 'OSPF-Underlay-spine3-DC2' 
   - fqdn: 'DCI'
     parentContainerName: 'DCI'
     configlets:
       - 'ATD-INFRA'
       - 'DCI-BASE'
-      - 'eBGP-Underlay-DCI'
+      - 'OSPF-Underlay-DCI'
 
 CVP_DEVICES_OSPF:
   - fqdn: 'leaf1-DC1'

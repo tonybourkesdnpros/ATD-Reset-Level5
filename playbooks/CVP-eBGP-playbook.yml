@@ -6,7 +6,7 @@
   vars: 
     path: "{{lookup('env','PWD')}}"
   vars_files: 
-     - /home/coder/project/persist/ATD-Lab-Reset/vars/eBGP-Underlay.yml
+     -  ../vars/CVP-eBGP.yml
    
   tasks:
     - name: Upload Configlets for eBGP Underlay
