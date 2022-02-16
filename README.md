@@ -46,19 +46,16 @@ There are currently three different Ansible playbooks:
 
 * CVP-default.yml
 * CVP-eBGP.yml
-* CVP-OSPF.yml
 
 ### CVP-default.yml
 
 This playbook resets the lab to the default container topology and all devices to the default configlets. It **does not** delete any configlets that have been uploaded or added in other ways. 
 
+    > ansible-playbook playbooks/CVP-lab-reset.yml
+
 ### CVP-eBGP.yml
 
 This playbook configures the lab with an eBGP-based underlay that encompasses DC1 and DC2, along with the configuration for the DCI switch to connect them. It doesn't have the MP-BGP overlay or any Tenant networks. 
-
-### CVP-OSPF.yml
-
-This playbook configures the lab with an OSPF-based underlay that encompasses DC1 and DC2, along with the configuration for the DCI switch to connect them. It doesn't have the MP-BGP overlay for any Tenant networks. 
 
 ## The Vars Files
 
