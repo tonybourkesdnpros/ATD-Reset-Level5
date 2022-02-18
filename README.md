@@ -44,5 +44,7 @@ This playbook resets the lab to the default container topology and all devices t
 
     > ansible-playbook playbooks/CVP-lab-reset.yml
 
+### Execute Change Control
 
+Create a change control with the tasks that the playbook triggered and excute the change control. 
     
