@@ -15,11 +15,7 @@ This does **not** create the change control or execute the change control. At th
 
 Make sure the CVP Ansible modules are installed 
 
-    ansible-galaxy collection install arista.cvp
-
-You will also (as of September 2021) update the cvprac Python library
-
-    pip install cvprac --upgrade
+    ansible-galaxy collection install arista.cvp:==3.3.0
 
 Now that the environment is ready, clone the ATD-Lab-Reset repo to the ATD VS-Code environment (Terminal). 
 
