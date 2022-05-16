@@ -13,15 +13,15 @@ This does **not** create the change control or execute the change control. At th
 
 ## Getting Started
 
-Make sure the CVP Ansible modules are installed 
+Because of an issue discovered with the Ansible collection arista.cvp version 3.3.1, you will need to downgrade your environment to 3.3.0. 
 
     ansible-galaxy collection install arista.cvp:==3.3.0
 
 Now that the environment is ready, clone the ATD-Lab-Reset repo to the ATD VS-Code environment (Terminal). 
 
-    > git clone https://github.com/tonybourkesdnpros/ATD-Lab-Reset.git
+    > git clone https://github.com/tonybourkesdnpros/ATD-Reset-Level5.git
     
-This will create a new directory called ATD-Lab-Reset.
+This will create a new directory called ATD-Reset-Level5.
 
 Edit the inventory.yml file to reflect the password for your particular enviroment: 
 
@@ -29,10 +29,9 @@ Edit the inventory.yml file to reflect the password for your particular envirome
 
 ## The Playbooks
 
-There are currently three different Ansible playbooks, but we only care about the 
+There is one playbook in the directory: This is the CVP-lab-reset playbook. 
 
 * CVP-lab-reset.yml
-
 
 ### CVP-lab-reset.yml
 
