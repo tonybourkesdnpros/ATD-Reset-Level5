@@ -15,7 +15,7 @@ This does **not** create the change control or execute the change control. At th
 
 Clone the ATD-Lab-Reset repo to the ATD VS-Code environment (Terminal). 
 
-    > git clone https://github.com/tonybourkesdnpros/ATD-Reset-Level5.git
+    git clone https://github.com/tonybourkesdnpros/ATD-Reset-Level5.git
     
 This will create a new directory called ATD-Reset-Level5.
 
